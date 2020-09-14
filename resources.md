@@ -13,3 +13,5 @@ https://drive.google.com/drive/folders/1D1AnR_6pUL6pWHxaEmvgcXTnn93EhyiQ?usp=sha
 <br>
 PAPER TITLE:-GalaxyMorphology-report.pdf(http://cs229.stanford.edu/proj2016/report/GauthierJainNoordeh)
 <br>
+<br>
+Paper Title: Feature selection and extraction(https://people.cs.uct.ac.za/~stpjul004/downloads/hnhroy002-feature_extraction_and_selection.pdf)
