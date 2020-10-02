@@ -15,3 +15,6 @@ PAPER TITLE:-GalaxyMorphology-report.pdf(http://cs229.stanford.edu/proj2016/repo
 <br>
 <br>
 Paper Title: Feature selection and extraction(https://people.cs.uct.ac.za/~stpjul004/downloads/hnhroy002-feature_extraction_and_selection.pdf)
+<br>
+<br>
+Galaxy classification using vgg16[https://diegocasmo.github.io/files/convolutional_neural_networks_for_galaxy_morphology_classification.pdf]
