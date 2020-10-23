@@ -1,12 +1,13 @@
 | ADHISHREYA                        | ADITI                                |           AISHWARYA               |AMEENA                                    |
 | ----------------------------------|--------------------------------------|-----------------------------------|------------------------------------------|
-| paper title                       |  1) Wahyono, Muhammad Arif Rahman and|                                   |                                          |
-|                                   |  Azhari SN - "Classification of      |                                   |                                          |
-|                                   |  Galaxy Morphological Image based    |                                   |                                          |
-|                                   |  on Convolutional Neural Network".   |                                   |                                          |
+| paper title                       |                                      |                                   |1.MACHINE AND DEEP LEARNING APPLIED TO GALAXY MORPHOLOGY.
+|                                                                                                               2.DEEP CONVOLUTIONAL NEURAL NETWORKS FOR GALAXY MORPHOLOGY        
+                                                                                                                  CLASSIFICATION.   
+  
 |                                   |                                      |                                   |                                          |
-|                                   |  2) Alexandre Gauthier, Archa Jain   |                                   |                                          |
-|                                   |  and  Emil Noordeh, Stanford         |                                   |                                          |
-|                                   |  University - "Galaxy Morphology     |                                   |                                          |
-|                                   |  Classification".                    |                                   |                                          |
+|                                   |                                      |                                   |                                          |
+|                                   |                                      |                                   |                                          |
+|                                   |                                      |                                   |                                          |
+|                                   |                                      |                                   |                                          |
+|                                   |                                      |                                   |                                          |
 |                                   |                                      |                                   |                                          |
