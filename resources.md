@@ -13,3 +13,5 @@
 [Galaxy classification using vgg16](https://diegocasmo.github.io/files/convolutional_neural_networks_for_galaxy_morphology_classification.pdf)
 
 [Medium post on Galaxy Zoo Classification with Keras](https://towardsdatascience.com/galaxy-zoo-classification-with-keras-219184aff581)
+
+[Galaxy Zoo Dataset title questions](https://academic.oup.com/mnras/article/435/4/2835/1022913)
