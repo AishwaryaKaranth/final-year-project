@@ -5,4 +5,4 @@ Add the links to the zip files of the processed images to this, after each step 
 [Rotated Images (Augmented Dataset) Zip File](https://drive.google.com/file/d/1ompns-8eyWcJToNdKrKpIBVawoO0qyRN/view?usp=sharing)
 
 
-[Median Filtered zip](https://drive.google.com/file/d/1o_xpTDkYekMvTyQPFrnNqNPAQwtoSvUl/view?usp=sharing)
+[Median Filtered zip](https://drive.google.com/drive/folders/1LiPOUSsSrRDXKYReqxfCyIAnIj-RdF2r?usp=sharing)
