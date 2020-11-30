@@ -8,4 +8,5 @@
 [Looping through images pt 2](https://stackoverflow.com/questions/6997419/how-to-create-a-loop-to-read-several-images-in-a-python-script)<br/>
 [Solving bad mode error while resizing](https://stackoverflow.com/questions/57194527/can-not-figure-out-what-the-error-is-in-my-python)<br/>
 [Data Augmentation using PIL's rotate method](https://www.geeksforgeeks.org/python-pil-paste-and-rotate-method/)<br/>
-[Stackoverflow link to resolving common error that occurs when using cv2.imshow()](https://stackoverflow.com/questions/22153271/error-using-cv2-equalizehist)
+[Stackoverflow link to resolving common error that occurs when using cv2.imshow()](https://stackoverflow.com/questions/22153271/error-using-cv2-equalizehist)<br/>
+[Reading and writing CSV Files in Python](https://realpython.com/python-csv/)
