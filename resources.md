@@ -17,3 +17,7 @@
 [Galaxy Zoo Dataset title questions](https://academic.oup.com/mnras/article/435/4/2835/1022913)
 
 [Galaxy Zoo Winning Solution Documentation Paper](https://github.com/benanne/kaggle-galaxies/blob/master/doc/documentation.pdf)
+
+[Activation function and the loss choices](https://towardsdatascience.com/deep-learning-which-loss-and-activation-functions-should-i-use-ac02f1c56aa8)
+
+[Lambda layers in keras](https://blog.paperspace.com/working-with-the-lambda-layer-in-keras/)
