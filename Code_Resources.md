@@ -10,3 +10,4 @@
 [Data Augmentation using PIL's rotate method](https://www.geeksforgeeks.org/python-pil-paste-and-rotate-method/)<br/>
 [Stackoverflow link to resolving common error that occurs when using cv2.imshow()](https://stackoverflow.com/questions/22153271/error-using-cv2-equalizehist)<br/>
 [Reading and writing CSV Files in Python](https://realpython.com/python-csv/)
+[Implementing Vgg16 architecture github repo](https://github.com/jameslawlor/kaggle_galaxy_zoo)
