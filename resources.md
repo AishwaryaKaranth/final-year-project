@@ -23,3 +23,5 @@
 [Lambda layers in keras](https://blog.paperspace.com/working-with-the-lambda-layer-in-keras/)
 
 [Types of galaxies - classification based on shapes (Cornell doc)](http://hosting.astro.cornell.edu/academics/courses/astro201/galaxies/types.htm#:~:text=S0%20galaxies%20are%20an%20intermediate,also%20known%20as%20Lenticular%20galaxies.)
+
+[About Eigen galaxies](https://arxiv.org/abs/2004.06734#:~:text=Eigengalaxies%20can%20be%20derived%20from,in%20a%20massively%20reduced%20manner.)
