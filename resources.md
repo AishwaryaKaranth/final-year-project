@@ -21,3 +21,5 @@
 [Activation function and the loss choices](https://towardsdatascience.com/deep-learning-which-loss-and-activation-functions-should-i-use-ac02f1c56aa8)
 
 [Lambda layers in keras](https://blog.paperspace.com/working-with-the-lambda-layer-in-keras/)
+
+[Types of galaxies - classification based on shapes (Cornell doc)](http://hosting.astro.cornell.edu/academics/courses/astro201/galaxies/types.htm#:~:text=S0%20galaxies%20are%20an%20intermediate,also%20known%20as%20Lenticular%20galaxies.)
