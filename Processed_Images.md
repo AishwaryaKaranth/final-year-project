@@ -7,4 +7,4 @@ Add the links to the zip files of the processed images to this, after each step 
 
 [Median Filtered zip](https://drive.google.com/drive/folders/1LiPOUSsSrRDXKYReqxfCyIAnIj-RdF2r?usp=sharing)
 
-[Histogram Equalization Zip File](https://drive.google.com/file/d/1U4rJpmmT6B5wpJSaXVJcfJrFpC45YQwY/view?usp=sharing)
+[Histogram Equalization zip File](https://drive.google.com/file/d/1U4rJpmmT6B5wpJSaXVJcfJrFpC45YQwY/view?usp=sharing)
