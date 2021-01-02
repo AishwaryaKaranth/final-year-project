@@ -25,3 +25,7 @@
 [Types of galaxies - classification based on shapes (Cornell doc)](http://hosting.astro.cornell.edu/academics/courses/astro201/galaxies/types.htm#:~:text=S0%20galaxies%20are%20an%20intermediate,also%20known%20as%20Lenticular%20galaxies.)
 
 [About Eigen galaxies](https://arxiv.org/abs/2004.06734#:~:text=Eigengalaxies%20can%20be%20derived%20from,in%20a%20massively%20reduced%20manner.)
+
+[Quality metrics for image processing in Astronomy (paper-1)](https://arxiv.org/pdf/1701.05300.pdf)
+
+[Quality metrics for image processing in Astronomy (paper-2) about Normalised point source sensitivity](https://www.researchgate.net/publication/238550544_A_convenient_telescope_performance_metric_for_imaging_through_turbulence)
