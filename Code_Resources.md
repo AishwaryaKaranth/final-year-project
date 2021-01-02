@@ -11,3 +11,4 @@
 [Stackoverflow link to resolving common error that occurs when using cv2.imshow()](https://stackoverflow.com/questions/22153271/error-using-cv2-equalizehist)<br/>
 [Reading and writing CSV Files in Python](https://realpython.com/python-csv/)
 [Implementing Vgg16 architecture github repo](https://github.com/jameslawlor/kaggle_galaxy_zoo)
+[Visualisation of Vgg16 feature maps](https://machinelearningmastery.com/how-to-visualize-filters-and-feature-maps-in-convolutional-neural-networks/)
