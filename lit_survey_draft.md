@@ -26,7 +26,7 @@ and traditional machine learning algorithms and another based on Deep Learning.D
 classification(spiral,elleptical,barred spiral).In [8],A robust deep convolutional neural network architecture for galaxy morphology classification is presented. 
 The categories for the classification of galaxies based on the morphological features are Elleptical,Spiral,Irreuglar.	
 In [9],A variant of residual networks (ResNets) for galaxy morphology classification was proposed here. The dataset was used from galaxy Zoo dataset. The categories of galaxies in the classificaton task were 5 classes namely completely round smooth, in-between smooth, cigar-shaped smooth, edge-on and spiral.
-In [10],In this paper Decision trees and Random Forest are used. Random Forest gave the highest percentages.Reliable models were used here to distinguish between spiral galaxies, elliptical galaxies or star/unknown galactic objects are developed.					
+In [10],In this paper Decision trees and Random Forest are used. Random Forest gave the highest percentages.Reliable models were used here to distinguish between spiral galaxies, elliptical galaxies or star/unknown galactic objects.(Ameena)					
 
 
 ## Methodology
