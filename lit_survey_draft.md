@@ -16,6 +16,6 @@
 
 ## Methodology
 ### Dataset
-- [13]Galaxy Zoo2 catalogue was used with datasets derived from Catalog Archieve Server of SDSS(sloan Digital Sky Survey) where the image size was 120x120 px. An approximate of 2,45,609 images were used.[14] images were taken from the Zsolt frei Catalog comprising digital images of nearly 113 from nearby galaxies.[11]Multiple catalogues were referred galaxy zoo catalog2, Zsolt frei Catalog for training and Cheng et al. 2011 for testing the models.[12] first data release of the Southern Photometric Local Universe Survey (S-PLUS) (Adhishreya)
+- 
 ### Pre-processing
-- [13] Otsu binary transform was performed to separate the background and foreground pixels[14]performs the usual pre-processing steps of resizing, rotating, scaling and centering the images thereby also introducing variability in the data by means of augmentation.[11]. Zooming, rotating, shifting, flipping the images was done as a part of augmentation to prevent overfitting of the models thereby allowing it to generalize well.[15].Coloured images are first converted to grey scale and then to a binary form using Otsu thresholding.(Adhishreya)
+- 
