@@ -27,7 +27,8 @@ classification(spiral,elleptical,barred spiral).In [8],A robust deep convolution
 The categories for the classification of galaxies based on the morphological features are Elleptical,Spiral,Irreuglar.	
 In [9],A variant of residual networks (ResNets) for galaxy morphology classification was proposed here. The dataset was used from galaxy Zoo dataset. The categories of galaxies in the classificaton task were 5 classes namely completely round smooth, in-between smooth, cigar-shaped smooth, edge-on and spiral.
 In [10],In this paper Decision trees and Random Forest are used. Random Forest gave the highest percentages.Reliable models were used here to distinguish between spiral galaxies, elliptical galaxies or star/unknown galactic objects.(Ameena)					
-
+- The Universe has billions of galaxies and studying them gives insights into how the matter in the universe is organized on large scales. Studying the classification of these galaxies also give insights into answers to fundamental questions like the origin of the universe. In [16], classification is done by considering 13 galaxy parameters measured by machine(ESO-LV) and is classified into five types(E, S0, Sa+Sb, Sc+Sd and Irr). In [19], they have classified images of radio galaxies based on morphology. They have considered the case of Fanaroff-Riley(FR) class of radio galaxies and bent-tailed morphology.
+In [20], Hubble's classification scheme to classify the galaxies.
 
 ## Methodology
 ### Dataset
