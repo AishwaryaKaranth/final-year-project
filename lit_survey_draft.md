@@ -79,7 +79,7 @@ which is applied to the weighted sum of these convolutions in order to produce a
 
 - With the use of larger datasets increase in the processing power,,memory size and the availability of the powerful GPUs , it was possible to train a deeper, the
 larger and the more complex models in [6].But machine learning models which includes learning parameters and extracting features could be used here to get the better accuracy for the classification.As both deep learning and machine learning gave the highest accuracy for two class classification this accuracy reduced when the number of classes increased and class imbalance problem was observed in morphological classiﬁcation which can be avoided using K-fold cross validation technique in [7].the accuracy of the proposed architecture for classifying galaxies types using deep convolutional neural networks, 5 different trials were performed in [8].
-In [9],Deep convolutional neural network was proposed model could be trained bigger and high quality datasets to get better results.In [10],different algorithms like decision tree,random forest classifier were used to perform classification Random forest with more number of trees could be used to yield 
+In [9],Deep convolutional neural network was proposed model could be trained on bigger and high quality datasets to get better results.In [10],different algorithms like decision tree,random forest classifier were used to perform classification Random forest with more number of trees could be used to yield 
 better results.(Ameena).
 
 
