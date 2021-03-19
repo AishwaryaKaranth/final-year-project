@@ -1,4 +1,5 @@
 ## Abstract
+To understand the large-scale structure of the universe, studying the morphology of galaxies is imperative. Scientists build a deeper understanding of the formation and evolution of galaxies by classifying them into different categories based on morphological parameters. With evolving galaxies and growing galaxy image data it was impossible for manual sorting. Automated means were then considered and newer algorithms evolved for feature extraction, reduction and classification. In this paper, we present a survey of 20 research efforts that employ various machine learning and deep learning techniques for the classification of galaxies based on morphology to gather insights into the accuracy that is obtained by these approaches. The pre-processing methods used on the data, models employed and the overall performance achieved according to the metrics used in each work under study are examined in this paper.
 
 ## Introduction
 
