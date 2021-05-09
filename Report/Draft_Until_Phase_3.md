@@ -36,6 +36,11 @@ The eighth model was trained on processed images. We used Adam optimizer for thi
 
 The ninth model was trained on processed images initially. Median filters and histogram equilization was done on unprocessed images to obtain processed images. We used Adam optimizer for this model. The learning rate was 0.001 and batch size was chosen to be 64. It was run in three different runs instead of running the entire model in one single run. It yielded a training accuracy of 78.56% and validation accuracy of 77.18% at the end of third run. the training loss was 0.0088 and the validation loss was 0.0102.
 (Will add the tables in LaTeX).
+
+### Final Model
+
+The ninth model was run in three different runs instead of one single run. Each run had varying number of epochs. The first run had 6 epochs and gave training accuracy of 74.31% and validation accuracy of 74.31% as well. The training loss and validation loss for first run was 0.0122. The second run was for 7 epochs and it gave training accuracy was 77.7% and validation accuracy was 76%. The training loss for the second run was 0.0099 and validation loss was 0.0110. The third run was for 9 epochs and gave a training accuracy of 78.56% and validation accuracy of 77.18%. The training loss for third run was 0.0088 and validation loss was around 0.0102. This model which was trained for three different runs yielded a much better result than previous models which were trained in a single run. Since this model outperformed the previous models, it was also used to train unprocessed images. (***Accuracy to be mentioned***).
+
 - Aishwarya
 
 ## 
