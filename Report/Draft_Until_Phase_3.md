@@ -44,3 +44,38 @@ The ninth model was run in three different runs instead of one single run. Each 
 - Aishwarya
 
 ## 
+<hr>
+
+## Image pre-processing
+Data of any form cannot directly be used for any model training techniques,they have to be subjected to certaining conditioning before being  fed into an algorithm.Images may be overlapped with noise,they may have poor contrast,can be of varied sizes and certain algorithms use a standards for image sizes being fed to them.When the amount of the data available is not sufficient,certain techniques must be employed to prevent overfitting the model,concepts like data augmentation is widely used for reducing overfitting.
+We have employed certain Pre-Processing techniques on the images .We mainly used the PIL(Python Imaging Library)and OpenCv Libraries to implement the following processes.Both the libraries have pre-defined functions for carrying out basic image processing operations.
+### Resizing
+The image dataset that we obtained from kaggle challenge had images of size 424x424.
+A standard VGG-16 model uses images of size 224x224.Also larger the size of an image greater is the computing involved therefore resizing the images to certain standards could reduce the computing power required.We therefore resized the images using a python library called PIL.  
+### Data augmentation:
+The main concerns of any model training is the problem of overfitting.The usual techniques of overcoming overfitting is using certain regularization techniques Data augmentation is one of them.It involves generating samples artificially ,thereby increasing the size of the dataset.Images are usually subjected to certain transformation processes like random rotations,flipping etc
+We employed the technique of rotating the images at random angles thereby increasing the size of our dataset from 61578 to 246312 where each image was subjected to rotation in 4 random angles
+We used PIL library to implement the same.
+#### Implementation steps
+* Read an image
+* Generate a random number between 1 and 360 using `random.uniform()`, a method to randomly generate floating numbers inclusive of both the parameters provided
+* Use the randomly generated number from the above step as an argument to the resize function.
+* Perform the same process 4 times for each image
+
+### Median Filtering
+The images available might be overlapped with noise, hence it is essential to use certain filtering techniques to filter them. 
+Median filtering was preferred since it has negligible loss of edges, which we want to preserve for our model training.The filter has a slight smoothing effect on our images.
+We again employed the PIL library where ImageFilter module was used which has certain predefined filters that is used with the `filter` function with the kernel size set to 3.
+### CLAHE
+The images we obtained had poor contrast,Histogram Equalization is generally used for increasing contrast in images,but we used CLAHE (Contrast Limited Adaptive Histogram Equalization), a variant of histogram equalization technique where it keeps a check on the amplification of contrast.A regular Histogram Equalization technique that concentrates on global contrast sometimes does not yield better results.
+CLAHE algorithm proceeds with considering small patches of the image(subimages) called “tiles” also preventing overamplification as overamplification may result in adding noise to the image.
+Open Cv was used to implement CLAHE.
+#### Implementation steps:
+* We decided to apply CLAHE only on the Lightness channel of the image.
+This required us to convert the RGB image to LAB using `cv2.cvtCOLOR()` function provided by the Open CV library.(Lab color space is a 3-axis color system with dimension L for lightness and a and b for the color dimensions.)
+The Lab image was then split into three channels using the `split()` function.
+* Creating titles of size 3x3 and setting the clip-limit to 2 and passing these as parameters to  `createCLAHE()`.Clip limit sets the threshold for contrast amplification.
+* Then calling the `apply()` function on the object to apply the equalization on the L channel of the image
+* The image channels are then merged using the `merge` function
+* Convert the images back to RGB colour space.
+<hr>
