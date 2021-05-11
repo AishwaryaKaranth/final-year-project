@@ -182,3 +182,58 @@ The Lab image was then split into three channels using the `split()` function.
 * The image channels are then merged using the `merge` function
 * Convert the images back to RGB colour space.
 <hr>
+
+
+### The Galaxy Zoo Data Set 
+### About the Challenge
+* Galaxy Zoo is famous classification challenge which was hosted by kaggle.kaggle has teamed up with Galaxy zoo and Winton Capital to produce the galaxy challenge where the participants main aim is to classify images of galaxies into various categories.Thousands of volunteers performed manual classification of the galaxies into various categories in a citizen science project.But this approach of manual classification becomes less feasible as there are billions of galaxies in the universe. Therefore the main goal of this challenge is to build  a model that mimics the manual classification or rather to  achieve better performance than the manual classifications,where it involves analysing the JPG images of galaxies to find automated metrics that reproduce the probability distributions derived from manual classifications(which involved decision tree that was used to classify the galaxies consisted of 11 questions and 37 responses based on which they were classified into 37 different categories.),where for each Galaxy the probability that it belongs to a particular class has to be determined.
+
+### Dataset
+* In this challenge,the data acquired from Sloan Digital Sky Survey(SDSS) was provided.This Survey mapped nearly one quarter of the entire sky which includes millions of images and huge amount of information.
+The training dataset consists of 61,578 JPEG images of galaxies of size 424* 424 with RGB channels,where each image has a ID number and galaxy at the center as shown in fig().The training images of this challenge were given in a single directory and their respective classes were mapped in a .csv file,with each image corresponding to 37 ouputs.
+* The test dataset in this challenge consists of 79,975 images of the galaxies without any probability labels.Therefore the task is to predict all the probability labels for the test dataset,and the result is evaluated by calculating the mean squared error(MSE) over all presictions.
+
+
+### Convolutional Neural Networks
+In Our project we have used CNNs (VGG-16 Architecture).
+
+
+### Introduction to Machine Learning and Deep Learning
+* Machine learning is a sub field of a Artifificial Intelligence(AI).It is the field of study that gives computers the capability to learn without being explicitly programmed.ML is one of the most exciting technologies that one would have ever come across. As it is evident from the name, it gives the computer that makes it more similar to humans: The ability to learn. Machine learning is actively being used today, perhaps in many more places than one would expect.Machine Learning algorithms instead allow for the computers to train on data inputs and use statistical analysis in order to output values that fall within a specifific range. The process of learning begins with observations or data, such as examples, direct experience, or instruction, in order to look for patterns in data and make better decisions in the future based on the examples that we provide.The primary aim is to allow the computers learn automatically without human intervention or assistance and adjust actions accordingly.
+* Deep learning is a branch of machine learning which is completely based on artificial neural networks, as neural network is going to mimic the human brain so deep learning is also a kind of mimic of human brain. In deep learning, we don’t need to explicitly program everything.Deep learning has evolved hand-in-hand with the digital era, which has brought about an explosion of data in all forms and from every region of the world. This data, known simply as big data However, the data, which normally is unstructured, is so vast that it could take decades for humans to comprehend it and extract relevant information. Companies realize the incredible potential that can result from unraveling this wealth of information and are increasingly adapting to AI systems for automated support.
+
+
+### How Deep Learning Works
+* As a subset of machine learning, deep learning uses hierarchical neural networks to analyze data. Neuron codes are linked together within these hierarchical neural networks, similar to the human brain. Unlike other traditional linear programs in machines, the hierarchical structure of deep learning allows it to take a nonlinear approach, processing data across a series of layers which each will integrate subsequent tiers of additional information. 
+* First, we need to identify the actual problem in order to get the right solution and it should be understood, the feasibility of the Deep Learning should also be checked (whether it should fit Deep Learning or not). Second, we need to identify the relevant data which should correspond to the actual problem and should be prepared accordingly. Third, Choose the Deep Learning Algorithm appropriately. Fourth, Algorithm should be used while training the dataset. Fifth, During the training of deep learning models, professionals use large sets of labeled data together with neural network architectures which learn features from the data directly without the need for feature extraction done manually. Final testing should be done on the dataset
+
+
+### Why Is DL Better Than ML
+* Deep Learning is important for one reason, and one reason only: we’ve been able to achieve meaningful, useful accuracy on tasks that matter. Machine Learning has been used for classification on images and text for decades, but it struggled to cross the threshold – there’s a baseline accuracy that algorithms need to have to work in business settings. Deep Learning is finally enabling us to cross that line in places we weren’t able to before.
+* For the majority of machine learning algorithms, it’s difficult to analyze unstructured data, which means it’s remaining unutilized and this is exactly where deep learning becomes useful.where we can use different data formats to train deep learning algorithms and still obtain insights which are relevant to the purpose of the training.
+* Once trained properly, a deep learning model becomes able to perform thousands of routine, repetitive tasks within a relatively shorter period of time compared to what it would take for a human being. In addition, the quality of the work never degrades, unless the training data contains raw data which doesn’t represent the problem that we are trying to solve. 
+* Deep learning models can also identify defects which would be difficult to detect otherwise. When consistent images become challenging because of different reasons, deep learning can account for those variations and learn valuable features to make the inspections robust.
+* Data labeling can be an expensive and time-consuming job. With a deep learning approach, the need for well-labeled data becomes obsolete as the algorithms excel at learning without any guideline.Other types of machine learning approaches aren’t nearly as successful as this type of learning. 
+* Therefore, deep learning has come a long way from being just a trend and it’s quickly becoming a critical technology being adopted steadily by an array of businesses, across multiple industries.
+
+
+### Convolutional Neural Networks
+* A Convolutional Neural Network (ConvNet/CNN) is a Deep Learning algorithm which can take in an input image, assign importance (learnable weights and biases) to various aspects/objects in the image and be able to differentiate one from the other. The pre-processing required in a ConvNet is much lower as compared to other classification algorithms. While in primitive methods filters are hand-engineered, with enough training, ConvNets have the ability to learn these filters/characteristics.
+The architecture of a ConvNet is analogous to that of the connectivity pattern of Neurons in the Human Brain and was inspired by the organization of the Visual Cortex. Individual neurons respond to stimuli only in a restricted region of the visual field known as the Receptive Field. A collection of such fields overlap to cover the entire visual area. CNNs use relatively little pre-processing compared to other image classification algorithms. This means that the network learns to optimize the filters (or kernels) through automated learning, whereas in traditional algorithms these filters are hand-engineered. This independence from prior knowledge and human intervention in feature extraction is a major advantage.
+
+
+### How do CNNs work?
+* Convolutional neural networks are composed of multiple layers of artificial neurons. Artificial neurons, a rough imitation of their biological counterparts, are mathematical functions that calculate the weighted sum of multiple inputs and outputs an activation value. The behavior of each neuron is defined by its weights. When fed with the pixel values, the artificial neurons of a CNN pick out various visual features. 
+***(figure to be added)***
+* When we input an image into a ConvNet, each of its layers generates several activation maps. Activation maps highlight the relevant features of the image. Each of the neurons takes a patch of pixels as input, multiplies their color values by its weights, sums them up, and runs them through the activation function.
+* The output of the first layer is fed as input of the next layer, which extracts more complex features, such as corners and combinations of edges. As we move deeper into the convolutional neural network, the layers start detecting higher-level features such as objects, faces, and more.
+* The operation of multiplying pixel values by weights and summing them is called “convolution” (hence the name convolutional neural network). A CNN is usually composed of several convolution layers, but it also contains other components. The final layer of a CNN is a classification layer, which takes the output of the final convolution layer as input.
+
+
+### Hierarchial Structure of CNNs:
+* As illustrated in Figure(), the first convolutional layer in the network corresponds to low level and local features, but in later convolutional layers, it will hierarchically represent more high level concepts and more global features as the convolution operations continue.Then we use pooling layers to reduce the spatial resolution of an input feature map; thus, we can do the dense convolution operation first to find useful features and concepts and then reduce the model capacity by pooling to prevent too many parameters. Pooling also introduces certain spatial invariance to features positions. Pooling operations are special types of con-
+volutional operations with fixed weights for the fitlers, such as max pooling and average pooling.Convolutional layers and pooling layers are essential components of the
+CNN architecture; different choices of their numbers, sizes, and orders lead to different efficiency and accuracy of the final performance.
+***(figure to be added)***.
+
+
