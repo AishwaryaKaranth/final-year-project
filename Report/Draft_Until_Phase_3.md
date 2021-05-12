@@ -237,3 +237,112 @@ CNN architecture; different choices of their numbers, sizes, and orders lead to 
 ***(figure to be added)***.
 
 
+
+## 
+<hr>
+
+## 4.2 MODEL ARCHITECTURE
+
+Our model’s architecture is inspired by the VGG-16 architecture, to which we made some slight modifications. The VGG-16 architecture was proposed by Karen Simonyan and Andrew Zisserman from the University of Oxford in 2014 in the paper “Very Deep Convolutional Networks For Large-Scale Image Recognition”. This model architecture achieved 92.7% test accuracy (top 5) in ImageNet, a dataset of more than 14 million images belonging to 1000 classes. It was based on an analysis of how to increase the depth of neural networks while maintaining the simplicity of its structure. Some of the papers we surveyed explored other architectures and a few suggested using VGG-16 for improvement and considering its popularity and ability to perform well, we decided to go ahead and stick to this architecture as the base with some changes for our model. 
+
+### 4.2.1 Structure
+
+
+The VGG-16 architecture consists of 16 layers in total. The 16 layers are split as - 13 convolutional layers and 3 fully-connected layers with several max-pooling layers in between. 
+The input to this architecture is a 224 * 224 RGB image. The preprocessed images (as per the process explained earlier) are fed as the input to the initial stack of convolutional layers. 
+The convolutional layer performs a dot product between two matrices, where one matrix (filter or kernel) is a set of learnable parameters, and the other matrix is a restricted portion of the image. At the end of the convolution process, we get a feature matrix which has lesser dimensions than the actual image as well as more clear features than the actual one.
+There is zero padding of size 1 * 1 done before each convolutional layer. The activation function used in the convolutional layers is ReLu. The rectified linear activation function or ReLU for short is a piecewise linear function that will output the input directly if it is positive, otherwise, it will output zero.
+
+We made some slight modifications to the VGG-16 architecture. The original VGG-16 architecture makes use of a stride of 1 in the convolutional layer filters (size = 3 * 3) and a max-pooling layer (size= 2 * 2) with a stride of 2 which halves the dimensions. We, however decided to go with a stride of 3 for the convolutional layer filters (size= 3 * 3) and a stride of 1 for the max-pooling layer (size = 2 * 2), the reasons being - a larger stride length leads to more generalisation and lesser overfitting which seems to be a major problem in the case of CNNs and image classification. We also choose a stride of 1 for the max-pooling layer to not reduce the dimensions (as that is already being don’t in the convolutional layers due to an increased stride) and highlight the strongest features only. The general approach is to choose a stride of 1 for the convolutional layer filters, which we also tried but we ended up getting a negligible change in the performance of the model in exchange for a much larger computational requirement of memory and time. The original architecture has around 138 million parameters. Our model had around 33 million trainable parameters, with almost the same level of performance, and much faster. 
+
+The first two convolutional layers after the initial zero padding have 64 filters, each having a size of 3 * 3 and a stride of 3 in our case. This is followed by a max-pooling layer of size 2 * 2 and stride of 1. In this layer, we try to extract the dominant features from a restricted neighbourhood. There are two more convolutional layers after the max-pooling layer with 128 filters which is again followed by a max-pooling layer. There are three convolutional layers with 256 filters and another max-pooling layer. The following 3 convolutional layers have 512 filters, with one more max-pooling layer. The next 3 convolutional layers also have 512 filters and then there is a final max-pooling layer.
+Then, there is a fully connected layer with 4096 units. This fully connected layer is connected to another FC layer having same number of units. Here, a dropout is added (rate=0.5) to prevent over-fitting. The final fully connected layer contains 37 units and sigmoid activation which is used for classification of 37 classes.
+
+*insert architecture image*
+
+### 4.2.2 Implementation
+
+We did not use the built-in VGG-16 model of Keras as we decided to implement the architecture from scratch since we have our own modifications. First, we imported the library Keras and methods in Keras that would be used for the same. 
+
+
+We defined a function `ConvLayers()` which took the number of layers to be added in a block of convolutional layers, the model to be built and the number of filters of each block as the parameters. 
+Before each convolutional layer, Zero Padding is done using the `ZeroPadding2D()` method, and the padding size is 1 * 1.
+Then a convolutional layer is added using the `Convolution2D()` method which takes into account the number of filters to be added, the size (in our case, 3 * 3), the stride (3) and the activation function which in our case was ReLu as the parameters.  Finally `MaxPolling2D()` method was used to add a max-pooling layer whose size was 2 * 2 and stride was 1.
+So whenever a block of convolutional layers and a max-pooling layer was needed to be added, we could call this function with the necessary parameters.
+
+
+```
+def ConvLayers(layers, model, filters):
+  for i in range(layers):   
+    model.add(ZeroPadding2D((1,1)))
+    model.add(Convolution2D(filters, 3,3,activation='relu'))
+  model.add(MaxPooling2D((2,2),strides=(1,1),padding="same"))
+```
+
+Next, was a function used to add fully-connected layers to our model, called `FCLayers()` which took the model to be built as the parameter. This function added a fully-connected layer with 4096 units along with a dropout (rate=0.5).
+
+```
+def FCLayers(model):
+  model.add(Dense(4096, activation='relu'))
+  model.add(Dropout(0.5))
+  ```
+
+
+The next function we defined was `VGG16_arc()` which actually defined the structure of the model. Here, `Sequential()` is called because our model is a sequential model. Then the functions above are called to add the respective layers in order.
+
+
+```
+def VGG16_arc():
+  model=Sequential()
+  ConvLayers(2,model,64)
+  ConvLayers(2,model,128)
+  ConvLayers(3,model,256)
+  ConvLayers(3,model,512)
+  ConvLayers(3,model,512)
+  model.add(Flatten())
+  FCLayers(model)
+  FCLayers(model)
+  model.add(Dense(37,activation='sigmoid'))
+  #model.add(Dense(3,activation='softmax'))
+  return model
+  ```
+
+
+Finally, the `build()` method is called to build the model.
+
+`model.build(input_shape=(None,224,224,3))`
+
+We also plotted the different feature maps that would be obtained if one image was passed through all the blocks of the convolutional layers using the `Model()` method, the `predict()` method and the Matplotlib library.
+
+*Insert feature maps image*
+
+
+
+## 5.2 - APPROACH
+
+
+Our approach to the training process was more as a multi-regression problem rather than a typical classification problem.
+This is because we are not trying to “classify” the galaxies as belonging to one of the 37 classes, but we’re trying to predict the probabilities of a particular galaxy answering the 11 questions in the different ways possible for each question. We’re trying to predict the probabilities of a galaxy being characterised by the 37 different features available as per the decision tree discussed in the earlier section.
+The accuracy of a model is high when the number of classes are low. Many of the papers we have surveyed have considered either a 3-class classification or a 5-class classification. But we have considered all 37 answers/classes and as the number of classes rise, the accuracy is naturally lesser.
+Also, since this is technically more like a regression problem than a typical classification problem, the focus is more upon reducing the loss function, which in our case is the mean square error, rather than the accuracy of the model as seen in typical classification tasks. Accuracy is not the go-to performance metric for regression problems, so evaluating the loss function is the right method to determine the performance of the project. 
+In the actual challenge, Root mean square error was the performance metric used but we have utilised mean square error as the loss function.
+
+
+## 5.5 - RESULTS AND SAMPLE PREDICTIONS
+
+The best results that we obtained after making the modifications to the base architecture and training the models with multiple combinations of hyper parameters and on the different datasets available to us are as follows -
+MSE (Mean Squared Error) = 0.0102
+RMSE (Root Mean Squared Error) = 0.1009
+
+We wrote a code that would take in a single image as the input and predict/display all the different features pertaining to it as the output.
+The following is a brief overview of the same - 
+* Firstly we imported all the libraries and methods that we’d be using. This included Numpy, Pandas, Matplotlib, PIL, OpenCV and Keras and its methods. 
+* We built the model as per the architecture discussed earlier and loaded the weights of the final run of the final model using the `load_weights` method onto our model.
+* The path where the image is present is given to a variable called "image path”. Then a user-defined function `preprocessing()` is called. This function takes the image’s path as the parameter and it performs resizing, median filtering and histogram equalization on the image as described in the earlier section on image preprocessing. This function returns an array which is then converted back into an image using the `fromarray()` method of PIL.Image .
+* Next, another user-defined function `prediction()` is called which takes the preprocessed image as its parameter. In this, the image is converted into an array using the `img_to_array()` method of Keras. Then this is converted into a batch (of a single image, since the network considers inputs in batches) using the `expand_dims()` method of Numpy and this batch is given to the `predict()` method of Keras to get the 37 probabilities as an array.
+* A user-defined function called `getfeatures()` was written to print out the features as per the decision tree discussed earlier. In order to do so, the entire decision tree was coded into an if-else if ladder with a function written for each question and that function being called as per the flow of the tree. Based on the if-else if conditions, it checks which answer has the highest probability for a particular question (function) and prints out that answer as a feature of the galaxy.
+
+Here are some sample outputs of this code - 
+
+*Insert output images*
+
