@@ -128,7 +128,7 @@ We then made use of ModelCheckpoint to save the model after every epoch.
 
 The parameters for `ModelCheckpoint` are `filepath` which takes in the filepath to store the weights after each epoch. `verbose` is here used to format the output. We also stored only the best weights after the training process stops therefore we set `save_best_only` parameter to `True`.
 
-We finally fit the model using model.fit(). model.fit() takes in several parameters. It takes in training data which in out=r case is train_generator. It takes in the training step size, number of epochs for which the model should run, validation data , validation step size and callbacks. Here `callbacks` is a list containing `early_stopping` and `ModelCheckpoint`.
+We finally fit the model using model.fit(). `model.fit()` takes in several parameters. It takes in training data which in our case is train_generator. It takes in the training step size, number of epochs for which the model should run, validation data , validation step size and callbacks. Here `callbacks` is a list containing `early_stopping` and `ModelCheckpoint`.
 
 `model.fit(train_generator,
            steps_per_epoch=train_step_size,
