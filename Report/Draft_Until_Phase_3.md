@@ -241,7 +241,7 @@ CNN architecture; different choices of their numbers, sizes, and orders lead to 
 ## 
 <hr>
 
-## 4.2 MODEL ARCHITECTURE
+## 4.2 ARCHITECTURE
 
 Our model’s architecture is inspired by the VGG-16 architecture, to which we made some slight modifications. The VGG-16 architecture was proposed by Karen Simonyan and Andrew Zisserman from the University of Oxford in 2014 in the paper “Very Deep Convolutional Networks For Large-Scale Image Recognition”. This model architecture achieved 92.7% test accuracy (top 5) in ImageNet, a dataset of more than 14 million images belonging to 1000 classes. It was based on an analysis of how to increase the depth of neural networks while maintaining the simplicity of its structure. Some of the papers we surveyed explored other architectures and a few suggested using VGG-16 for improvement and considering its popularity and ability to perform well, we decided to go ahead and stick to this architecture as the base with some changes for our model. 
 
