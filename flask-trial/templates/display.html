@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{%block head%}<title></title>{%endblock%}
+
+{%block body%}
+<body>
+    
+    <div style="background-image: linear-gradient(to right,#F59E0B,#f26405,red,#140b05);width: fit-content;padding: 2rem;position: absolute;left: 25%;align-items: center;display: block;border-radius: 1rem;">
+        <!-- <img src={{value}} style="position: relative;left: 0%;border-radius: 1.5rem;width: 20rem;"/> -->
+        <img id="picture" src="data:image/jpeg;base64,{{ value }}" style="margin-left:  25%;width: 20rem;">
+        <ul style="color: #F3F4F6;list-style: square;font-size: 1em;">
+   {%for i in range(0,length)%}
+   <li>{{output[i]}}</li>
+   {%endfor%}
+</ul>
+ 
+    </div>
+</body>
+{%endblock%}
