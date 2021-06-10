@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Galaxy Classification using CNN</title>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+</head>
+<style>
+	label input{
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+label{
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin: 10px auto;
+  line-height: 47px;
+  color: white;
+  font-weight: bold;
+  font-size: 46px;
+}
+label:hover{
+  background: gray;
+  color: white;
+}
+</style>
+<body style="background: linear-gradient(Black,DarkBlue,Indigo) fixed; height: 100%;background-repeat: no-repeat;
+  background-size: cover; ">
+	<div>
+	<h3 style="text-align: center; color: white; font-family: 'Krona One', sans-serif; font-size: 30px;margin-top:4rem; padding-right:1rem; padding-left:1rem;">
+		Morphological Taxonomy of Galaxies using Convolutional Neural Networks
+	</h3>
+
+<script>
+function showText(id,delay){
+var elem=document.getElementById(id);
+setTimeout(function(){elem.style.visibility='visible';},delay*1000)
+}
+window.onload=function(){
+showText('dt1',1);
+showText('dt2',1.5);
+showText('dt3',2.5);
+showText('dt4',3.5);
+showText('dt5',4.5);
+showText('dt6',6.5);
+showText('dt7',8);
+showText('dt8',9);
+showText('dt9',10);
+showText('dt10',11);
+showText('dt11',12);
+showText('dt12',13);
+showText('dt13',15);
+showText('dt14',16);
+showText('dt15',18);
+showText('dt16',19);
+showText('dt17',19.5);
+showText('dt18',20);
+}
+</script>
+</head>
+<body>
+<div id="dt1" style="visibility:hidden; color: Coral; font-family: 'Krona One', sans-serif; font-size: 18px;text-align:center; margin-top:1cm;">The image has been Uploaded.
+</div>
+<div id="dt2" style="visibility:hidden; color: White; font-family: 'Krona One', sans-serif; font-size: 18px;text-align:center; margin-top:1.5cm;">STEP 1 -IMAGE PREPROCESSING
+</div>
+<div id="dt3" style="visibility:hidden; color: rgb(255, 51, 51); font-family: 'Copperplate', Fantasy; font-size: 22px;text-align:center;margin-top:0.5cm;">Substep 1 - Image Resizing (Size = 224*224)
+</div>
+<div id="dt4" style="visibility:hidden; color: rgb(255, 51, 51); font-family: 'Copperplate', Fantasy; font-size: 22px;text-align:center;">Substep 2 - Median Filtering (Noise Reduction)
+</div>
+<div id="dt5" style="visibility:hidden; color: rgb(255, 51, 51); font-family: 'Copperplate', Fantasy; font-size: 22px;text-align:center;">Substep 3 - Contrast Limited Adaptive Histogram Equalization
+</div>
+<div id="dt6" style="visibility:hidden; color: White; font-family: 'Krona One', sans-serif; font-size: 18px;text-align:center; margin-top:1cm;">STEP 2 - MORPHOLOGY CLASSIFICATION (With a Multi-Regression Approach) USING A<br><mark>CONVOLUTIONAL NEURAL NETWORK</mark> (CNN).
+</div>
+<div id="dt7" style="visibility:hidden; color: Coral; font-family: 'Krona One', sans-serif; font-size: 15px;text-align:center; margin-top:1cm;">.....The image is now being fed into the CNN.....
+</div>
+<div id="d87" style="visibility:hidden; color: PaleGreen; font-family: 'Copperplate', Fantasy; font-size: 21px;text-align:center;margin-top:0.5cm;"> Total Number of Layers in the CNN = 16
+</div>
+<div id="dt9" style="visibility:hidden; color: Yellow; font-family: 'Copperplate', Fantasy; font-size: 21px;text-align:center;"> Number of Convolution Layers = 13<br> (Max-Pooling Layers are placed in between) <br> Number of Fully-Connected Layers = 3
+</div>
+<div id="dt10" style="visibility:hidden; color: PaleTurquoise ; font-family: 'Copperplate', Fantasy; font-size: 21px;text-align:center;"> Activation Function in Convolution Layer : Rectified Linear Unit<br> Activation Function in Output Layer : Sigmoid
+</div>
+<div id="dt11" style="visibility:hidden; color:Bisque ; font-family: 'Copperplate', Fantasy; font-size: 21px;text-align:center;">Total Number of Trainable Parameters = 33,748,837
+</div>
+<div id="dt12" style="visibility:hidden; color:rgb(255,0,0) ; font-family: 'Copperplate', Fantasy; font-size: 21px;text-align:center;">A Total of 10 Models were trained.<br> The Final Model was Trained over the following Hyperparameters on 3 RUNS:<br>
+Optimizer = Adam<br>
+Learning Rate = 0.001<br>
+Decay = 5e-4<br>
+Batch Size = 64<br>
+Total number of Epochs = 22 (Split as 6,7 and 9 for the three runs respectively)
+<br>
+<br>
+Total Training Time for FINAL MODEL = 5.5 Hours
+</div>
+<div id="dt13" style="visibility:hidden; color:Yellow ; font-family: 'Copperplate', Fantasy; font-size: 21px;text-align:center;">Mean Square Error of the Model = 0.0102 (Validation Loss)
+</div>
+<div id="dt14" style="visibility:hidden; color: Coral; font-family: 'Krona One', sans-serif; font-size: 15px;text-align:center; margin-top:1cm;"> .....The network will determine the probabilities with which features can characterise the galaxy, as per the Decision Tree.....
+
+</div> 
+<div id="dt15" style="visibility:hidden; color: White; font-family: 'Krona One', sans-serif; font-size: 18px;text-align:center; margin-top:1cm;">STEP 3 - OBTAINING MORPHOLOGICAL FEATURES ON THE CLIENT-SIDE INTERFACE.
+</div>
+<div id="dt16" style="visibility:hidden; color: rgb(255, 0, 0); font-family: 'Krona One', sans-serif; font-size: 25px;text-align:center;margin-top:1cm;"> Process Completed.
+
+</div>
+<div id="dt17" style="visibility:hidden; color: White; font-family: 'Krona One', sans-serif;  font-size: 16px;text-align:center; margin-top:1cm;"> NOTE - Delays have been introduced to give clarity about the steps involved.<br>
+The Actual Processing Time for the Prediction is in the order of MILLISECONDS. 
+</div>
+<div id="dt18" style="visibility:hidden;">
+	<img id="picture" src="data:image/jpeg;base64,{{ value }}" style="margin-left:  42%; margin-top:1cm; width: 15rem;" border: 5px solid #999;>
+
+	<p style="color: white; font-family: 'Krona One', sans-serif; font-size: 25px;text-align:center;">
+	OUTPUT (Predicted Features) - 
+	</p>
+        <ul style="color:White;list-style: disc;font-family: 'Krona One', sans-serif; font-size: 18px;" >
+   {%for i in range(0,length)%}
+   <li>{{output[i]}}</li>
+   {%endfor%}
+</ul>
+</div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
