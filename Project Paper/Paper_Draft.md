@@ -39,6 +39,30 @@ The resultant images after performing CLAHE is shown in below figure.
 Our work made use of a Convolutional Neural Network for the classification process. CNNs are a class of Deep Learning algorithms that constitute convolution layers (where filters are made to scan the input to the respective layer) which play a vital role in the process of feature extraction. There are multiple architectures of CNNs used in related works. Our model was inspired by the VGG-16 architecture to which we made slight modifications. The VGG-16 architecture performed well in the ImageNet challenge, and it possesses a good depth of the network while retaining the structure’s simplicity. 
 We made some slight modifications to the VGG-16 architecture. The network has 16 layers in total - 13 convolution layers and 3 fully connected layers. The original VGG-16 architecture makes use of a stride of 1 in the convolutional layer filters and a max-pooling layer with a stride of 2 which halves the dimensions. We, however, decided to go with a stride of 3 for the convolutional layer filters and a stride of 1 for the max-pooling layer while retaining the sizes to be 3*3 and 2*2 respectively for the two layers, the reasons being - a larger stride length leads to more generalisation and lesser overfitting which seems to be a major problem in the case of CNNs and image classification. We also chose a stride of 1 for the max-pooling layer to not reduce the dimensions (as that is already being done in the convolutional layers due to an increased stride) and highlight the strongest features only.  The general approach is to choose a stride of 1 for the convolutional layer filters, which we also tried but we ended up getting a negligible change in the performance of the model in exchange for a much larger computational requirements. The general architecture however, remained similar to the original VGG-16. The original architecture has around 138 million parameters, while our model had around 33 million trainable parameters, with almost the same level of performance, and was much faster to train. We used ReLu (Rectified Linear Unit) as our activation function in the convolution layers and a Sigmoid activation function in the output layer which contains 37 units in accordance to the 37 features as per the decision tree considered [21].
 
+### Training
+
+### Final Model & Performance
+The final Model (i.e the tenth Model) was run in thre different runs instead of running the entire model in one single run.
+This model was trained on processed images,where the processed images were obtained by performing Median filtering
+and Histogram Equalization on unprocessed images as discuused in previous sections.Each run had varying number of Epochs.
+And this model was built using Keras libraries and built in functions. We
+used Adam optimizer for this model. The learning rate was 0.001,decay was 5 * 10−4 and batch size was chosen to be 64.
+
+First run : The first run had 6 epochs.The loss plot has epochs as x-axis and loss as y-axis. As the the number of epochs gradually increased the loss gradually decreased as shown in fig().and the the accuracy increased as the number of epochs increased as shown in below figure.The validation loss for first run was 0.0122.
+The validation accuracy at the end of first run was 74.31%.
+
+Second Run: The second run was for 7 epochs.The loss decreased slightly as the epochs increased but validation loss became more constant towards the end of of 6th epoch as shown in fig(). The validation loss at the end of second run was 0.0110.And the accuracy significantly increased until 4 epochs and then gradually increased as the number of epochs increased as show  in below fig().The training loss for the second run was 0.0099 and validation loss was 0.0110. The validation accuracy at the end of second run was 76%.
+
+Third Run :The third run was for 9 epochs.The loss decreased initially as the epochs increased but later remained mostly constant and started decreasing slightly
+at the end of 9th epoch which indicated overfitting as shown in below fig().therefore we stopped training after 9 epochs in the third run. 
+and the validation accuracy slightly increased during the first two epochs and then remained constant as the epochs increased as shown below in fig().
+
+The validation loss at the end of third run was 0.0102.It gave a training accuracy of 78.56% and validation accuracy of 77.18%.
+
+Therefore ,This model which was trained for three different runs yielded a much better result than previous models which were trained in a single run.
+Hence this final model gave mean square error of "0.0102" on processed images.
+***Inserting Table for the same***
+
 ## DECISION TREE
 The decision tree considered presents the guidelines for measuring finer morphological features [21]. It stems from a citizen science crowdsourcing project where thousands of volunteers were asked to manually classify the galaxies based on 11 questions. There are 37 nodes or a total of 37 finer features that could characterise the galaxy. The output of the CNN’s final layer gives the probabilities of all the 37 features. The task at hand was to identify the answers to all the 11 questions by determining the features having maximum probability under each class (question). Once the strongest features are determined, they are presented as the physical features that characterise the input galaxy image that is uploaded by the user on the client-side interface. Each question’s answer (the one with the maximum probability), determines the flow the tree. So the decision tree was coded as a function to which the data frame containing all the 37 answers’ probabilities was given as the input. The output of the function was a list of morphological features that characterise the galaxy as per the decision tree. 
 
