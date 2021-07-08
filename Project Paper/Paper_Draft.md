@@ -34,7 +34,7 @@ Upon training the model,we deployed the model using flask wherein the user can u
 
 
 ### Html
-Html forms the basic structure of any webpage.Css was used to style our webpages.Javascript is essential to make the web page interactive and dynamic.
+Html forms the basic structure of any webpage.Css was used to style our webpages.Javascript is essential to make the web page interactive.
 We used **index.html** to fetch the data from the user and included a form submit action, where on hitting a button, the data is sent to the server.The results of the prediction are served using the **pred.html**.
 
 ### Flask
