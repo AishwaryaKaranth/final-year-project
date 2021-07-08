@@ -30,11 +30,11 @@ The decision tree considered presents the guidelines for measuring finer morphol
 
 ## Model Deployment
 Upon training the model,we deployed the model using flask wherein the user can upload an image and upon processsing the image the results are rendered to the user. Flask was mainly used at the serverside and at the front end we used html,css and javascript.
-2 different html files are served to the browser one for uploading the image and the other for rendering the result to the user.At the backend we feed the image to the model and obtain the predicted features and render it to frontend.We created api endpoints to obtain user requests ,based on the request obtained from the user, we sent appropriate responses.
+2 different html files are served to the browser one for uploading the image and the other for rendering the result to the user.At the backend we feed the image to the model and obtain the predicted features and render it to frontend.Http request-response protocol is implemented to communicate between the client(browser) and the server(flask).We created api endpoints to obtain user requests ,based on the request obtained from the user, we sent appropriate responses.
 
 
 ### Html
-Html forms the basic structure of any webpage.Css was used to style our webpages.Javascript is essential to make the web page interactive and dynamic.Http request-response protocol is implemented to communicate between the client(browser) and the server(flask).
+Html forms the basic structure of any webpage.Css was used to style our webpages.Javascript is essential to make the web page interactive and dynamic.
 We used **index.html** to fetch the data from the user and included a form submit action, where on hitting a button, the data is sent to the server.The results of the prediction are served using the **pred.html**.
 
 ### Flask
