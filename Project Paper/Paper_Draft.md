@@ -18,6 +18,33 @@ We made some slight modifications to the VGG-16 architecture. The network has 16
 ## DECISION TREE
 The decision tree considered presents the guidelines for measuring finer morphological features [21]. It stems from a citizen science crowdsourcing project where thousands of volunteers were asked to manually classify the galaxies based on 11 questions. There are 37 nodes or a total of 37 finer features that could characterise the galaxy. The output of the CNN’s final layer gives the probabilities of all the 37 features. The task at hand was to identify the answers to all the 11 questions by determining the features having maximum probability under each class (question). Once the strongest features are determined, they are presented as the physical features that characterise the input galaxy image that is uploaded by the user on the client-side interface. Each question’s answer (the one with the maximum probability), determines the flow the tree. So the decision tree was coded as a function to which the data frame containing all the 37 answers’ probabilities was given as the input. The output of the function was a list of morphological features that characterise the galaxy as per the decision tree. 
 
+<hr>
+
+
+## Model Deployment
+Upon training the model,we deployed the model using flask wherein the user can upload an image and upon processsing the image the results are rendered to the user. Flask was mainly used at the serverside and at the front end we used html,css and javascript.
+2 different html files are served to the browser one for uploading the image and the other for rendering the result to the user.At the backend we feed the image to the model and obtain the predicted features and render it to frontend.We created api endpoints to obtain user requests ,based on the request obtained from the user, we sent appropriate responses.
+
+
+### Html
+Html forms the basic structure of any webpage.Css was used to style our webpages.Javascript is essential to make the web page interactive and dynamic.Http request-response protocol is implemented to communicate between the client(browser) and the server(flask).
+We used **index.html** to fetch the data from the user and included a form submit action, where on hitting a button, the data is sent to the server.The results of the prediction are served using the **pred.html**.
+
+### Flask
+Flask is a micro web framework or the server side framework written in Python.A Web application framework is the collection of libraries and modules thatenables a web application developer to write applications without having to botherabout low-level details such as protocols, thread management etc. We have used the jinja2 templating.Jinja2 templating is used to create templates and allows dynamic injection of content into the templated file.
+
+##### Implementation steps
+
+* Different endpoints were defined using the **route()** method that binds the url to a specific function.Upon running the flask app **GET** request is obtained at the root url, defined as **route('/')** and a corresponding base function is triggered thereby serving the browser ,the **index.html** file using the **render_template()** function.This function allows to inject the data directly into the html template file.
+* The request(POST request) for prediction involves a post method and is sent to the **'/upload'** endpoint.
+* Upon obtaining the image, we preprocess it [using **preprocessing()** function defined earlier] by resizing as per our model specification (224x224),and subject it to median filtering then contrast limited adaptive histogram equilization. We load the model with the weights obtained from the training process and feed the preprocessed images to it by passing it through **prediction()**.
+* The output in form of a numpy array is passed to a function **get_features()** function that was previously defined(mimicked the decision tree catalog as defined in Galaxy Zoo challenge).Here while executing the function, for every corresponding responses we appended the features to a list.
+* Now in order to serve the image to the user along with the features we have to store the file in a static container, instead we converted the image in the form of a data uri , a commonly used technique to directly embed images in html, this required us to temporarily save the image in a buffer using **io.BYTESIO()** class. We base64 encoded the image then converted the resulting byte to a string using the **decode()** function. This string/data usi along with the features list is injected into the **pred.html** file using **render_template()**.
+* The **'pred.html'** has placeholders that are replaced by the data sent from the render function.The feature list replace the placeholder by using a for loop.
+* In the front end the we have also included information about the various step taking place at the backend and rendered that using a delay.This was mainly done using javascript using **setTimeout()** function where the data is initially hidden and the visibility changes after multiple delays as per the value specified as a parameter of the setTimeout() function.
+
+<hr/>
+
 ## CONCLUSION AND FUTURE SCOPE
 The deeper understanding of the dynamical history of galaxies is aided by the powerful probe of morphological parameters. Visual inspection for the identification of characteristic physical features of galaxies is impractical for astrophysicists. Our work presents a method of automating  the process of determining the morphological features that characterise a galaxy with the use of Convolutional Neural Networks. The Galaxy Zoo dataset was resized and augmented, followed by the application of median filtering and contrast limited adaptive histogram equalisation. The processed images were then fed into a CNN based on the VGG-16 architecture. After the training of 10 models, the final model with the best combination of hyper parameters gave a mean square error of 0.0102 on processed images. The morphological features were then determined by the features having the maximum probabilities under each class or question. The model was then deployed onto a client-side interface using Flask where the user could upload an image of a galaxy and get a list of morphological features that characterise the galaxy as the output in real-time.   
 There are many secondary objects present in some images, so the scale can be reduced to see if it helps focus on the features of the galaxy under consideration, or segmentation algorithms for
