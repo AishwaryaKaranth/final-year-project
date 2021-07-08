@@ -42,11 +42,8 @@ We made some slight modifications to the VGG-16 architecture. The network has 16
 ### Training
 
 ### Final Model & Performance
-The final Model (i.e the tenth Model) was run in thre different runs instead of running the entire model in one single run.
-This model was trained on processed images,where the processed images were obtained by performing Median filtering
-and Histogram Equalization on unprocessed images as discuused in previous sections.Each run had varying number of Epochs.
-And this model was built using Keras libraries and built in functions. We
-used Adam optimizer for this model. The learning rate was 0.001,decay was 5 * 10−4 and batch size was chosen to be 64.
+The final Model (i.e the tenth Model) was run in three different runs instead of running the entire model in one single run.
+This model was trained on processed images,where the processed images were obtained by performing Median filtering and Histogram Equalization on unprocessed images as discuused in previous sections.Each run had varying number of Epochs.And this model was built using Keras libraries and built in functions. We used Adam optimizer for this model. The learning rate was 0.001,decay was 5 * 10−4 and batch size was chosen to be 64.
 
 First run : The first run had 6 epochs.The loss plot has epochs as x-axis and loss as y-axis. As the the number of epochs gradually increased the loss gradually decreased as shown in fig().and the the accuracy increased as the number of epochs increased as shown in below figure.The validation loss for first run was 0.0122.
 The validation accuracy at the end of first run was 74.31%.
