@@ -12,11 +12,28 @@ The Sloan Digital Sky Survey has mapped nearly one-third of the sky which lead t
 The galaxy zoo training dataset consists of 61,578 JPEG images of galaxies of size 424 * 424 with RGB channels, where each image has an ID number and galaxy at the center. The training images of this challenge were given in a single directory and their respective classes were mapped in a .csv file  with each image corresponding to 37 outputs. The test dataset in this challenge consists of 79,975 images of the galaxies without any probability labels. Therefore the task is to predict all the probabilities for the labels for the test dataset, and the result is evaluated by calculating the loss function over all predictions.
 
 ## Pre-processing
-
+Image Preprocessing is very essential to analyze and make important inferences about celestial objects.This is done to improve the image data and suppress the undesired distortions.It plays a vital role in analyzing and interpreting galaxy images andto improve and analyze the properties of celestial objects.Folowing are some Image processing techniques involved before feeding the image data into the models.
 ### Resizing
 Images were resized to 224x224 as the architecture was designed to accept images of the same size.Resizing also proves to be a vital step as it reduces the amount of computation otherwise involved.We used the PILLOW library of python to resize the images.
+### Data Augmentation
+The performance of model usually improves with the amount of data available.And The main concerns of any model training is the problem of overfitting 
+Technique which can be overcome by using certain regularization Techniques.one among this is Data Augmentation.It is a technique of creatig new data samples 
+artificially from existing training data,thereby increasing the size of the training dataset. This is done by applying certain transformations to the images 
+which includes random rotations,flipping,zooms etc..We employed the technique of Rotation,where the images were rotated at random angles,thereby increasing the size 
+of our dataset from 61578 to 246312 where each image was subjected to rotation in 4 random angles.We used PIL library of python to implement the same.Some Augmented Images are shown in the following figure.
+***Images to be added***.
+
 ### Median Filtering
 The fitering technique was used to reduce noise in the images.It was chosen since it results in negligible loss since it results in negligible loss of edges.The filter has a slight smoothing effect on our images.  We employed the PIL library where ImageFilter module was used which has certain predefined filters that is used with the filter() function with the kernel size set to 3.
+
+### Contrast Limited Adaptive Histogram Equalization(CLAHE)
+Generally,the contrast of the images can be increased by using a technique called "Histogram equalization".As this technique which increases the global contrast sometimes doesnot yield better results and gives unclearness images.We employed a variant method of adaptive histogram equalization called CLAHE(Contrast Limited Adaptive Histogram Equalization) which takes care of over amplification of contrast and avoids over amplification of noise in realtive regions of an image.
+CLAHE algorithm mainly operates on smaller regions in an image (subimage) known as "tiles",rather than the entire image.where 
+the enhancement is apllied over all neighborhood pixels.	Contrast limiting is much relevant to avoid the Noise."Clip limit" is used to set the threshold for contrast limiting,when the histograms are above this specified threshold level then those pixels are clipped and distributed uniformly to other histograms.Therefore ,it results in prevention of overamplification of contrast which results in addition of Noise.LAB colour space is used,(Lab color space is a 3-axis color system
+with dimension L for lightness and a(red/green value) and b(blue/yellow value) for the color dimensions.)Open Cv method was used to implement CLAHE.
+The resultant images after performing CLAHE is shown in below figure.
+***(Images has to be added).
+
 
 ## MODEL ARCHITECTURE
 Our work made use of a Convolutional Neural Network for the classification process. CNNs are a class of Deep Learning algorithms that constitute convolution layers (where filters are made to scan the input to the respective layer) which play a vital role in the process of feature extraction. There are multiple architectures of CNNs used in related works. Our model was inspired by the VGG-16 architecture to which we made slight modifications. The VGG-16 architecture performed well in the ImageNet challenge, and it possesses a good depth of the network while retaining the structure’s simplicity. 
