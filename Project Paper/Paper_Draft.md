@@ -17,7 +17,7 @@ Image Preprocessing is very essential to analyze and make important inferences a
 Images were resized to 224x224 as the architecture was designed to accept images of the same size.Resizing also proves to be a vital step as it reduces the amount of computation otherwise involved.We used the PILLOW library of python to resize the images.
 ### Data Augmentation
 The performance of model usually improves with the amount of data available.And The main concerns of any model training is the problem of overfitting 
-Technique which can be overcome by using certain regularization Techniques.one among this is Data Augmentation.It is a technique of creatig new data samples 
+which can be overcome by using certain regularization Techniques.one among this is Data Augmentation.It is a technique of creatig new data samples 
 artificially from existing training data,thereby increasing the size of the training dataset. This is done by applying certain transformations to the images 
 which includes random rotations,flipping,zooms etc..We employed the technique of Rotation,where the images were rotated at random angles,thereby increasing the size 
 of our dataset from 61578 to 246312 where each image was subjected to rotation in 4 random angles.We used PIL library of python to implement the same.Some Augmented Images are shown in the following figure.
@@ -32,7 +32,7 @@ CLAHE algorithm mainly operates on smaller regions in an image (subimage) known 
 the enhancement is apllied over all neighborhood pixels.	Contrast limiting is much relevant to avoid the Noise."Clip limit" is used to set the threshold for contrast limiting,when the histograms are above this specified threshold level then those pixels are clipped and distributed uniformly to other histograms.Therefore ,it results in prevention of overamplification of contrast which results in addition of Noise.LAB colour space is used,(Lab color space is a 3-axis color system
 with dimension L for lightness and a(red/green value) and b(blue/yellow value) for the color dimensions.)Open Cv method was used to implement CLAHE.
 The resultant images after performing CLAHE is shown in below figure.
-***(Images has to be added).
+***(Images has to be added)***.
 
 
 ## MODEL ARCHITECTURE
